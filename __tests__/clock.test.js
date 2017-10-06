@@ -14,18 +14,11 @@ describe('dashboard-test', () => {
     })
   })
 
-  it('should match the snapshot', () => {
-    let vm = new Constructor().$mount()
-    expect(vm.$el).toMatchSnapshot()
-  });
-
   it('should use timestamp if set', () => {
 
-    let vm = new Constructor({
-      propsData: {
-        timezone: 'AMERICA/LOS_ANGELES'
-      }
-    }).$mount()
+    let vm = createVm({
+      timezone: 'AMERICA/LOS_ANGELES'
+    })
 
     expect(vm.timezone).toEqual('AMERICA/LOS_ANGELES')
     expect(vm.dateTime.format('HH:mm:ss')).toEqual('03:00:00')
@@ -34,18 +27,46 @@ describe('dashboard-test', () => {
 
   it('should run time', async () => {
 
-      let vm = new Constructor({
-          propsData: {
-              timezone: 'AMERICA/LOS_ANGELES'
-          }
-      }).$mount()
+    let vm = createVm({
+      timezone: 'AMERICA/LOS_ANGELES'
+    })
 
-      clock.tick(1000)
-      await Vue.nextTick()
+    clock.tick(1000)
+    await Vue.nextTick()
 
-      expect(vm.timezone).toEqual('AMERICA/LOS_ANGELES')
-      expect(vm.dateTime.format('HH:mm:ss')).toEqual('03:00:01')
+    expect(vm.timezone).toEqual('AMERICA/LOS_ANGELES')
+    expect(vm.dateTime.format('HH:mm:ss')).toEqual('03:00:01')
 
   })
+
+  it('can render formatted date by props', () => {
+
+    let vm = createVm({
+      dateFormat: 'DD/MM/YYYY'
+    })
+
+    expect(vm.formattedDate).toEqual('01/01/2018')
+    expect(vm.$el).toMatchSnapshot()
+
+  })
+
+  it('can render formatted time by props', () => {
+
+    let vm = createVm({
+      timeFormat: 'HH:mm'
+    })
+
+    expect(vm.formattedTime).toEqual('12:00')
+    expect(vm.$el).toMatchSnapshot()
+
+  })
+
+  function createVm(propsData = {}) {
+
+    return new Constructor({
+      propsData: propsData
+    }).$mount()
+
+  }
 
 })

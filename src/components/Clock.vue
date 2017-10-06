@@ -1,10 +1,10 @@
 <template>
   <div class="clock">
     <div class="date">
-      {{ dateTime.format('ddd MM/DD') }}
+      {{ formattedDate }}
     </div>
     <div class="time">
-      {{ dateTime.format('HH:mm:ss') }}
+      {{ formattedTime }}
     </div>
     <div class="timezone">
       {{ timezone.replace('_', ' ').replace('/', ' / ') }}
@@ -21,11 +21,27 @@ export default {
     timezone: {
       type: String,
       default: 'Europe/Berlin'
+    },
+    dateFormat: {
+      type: String,
+      default: 'ddd MM/DD'
+    },
+    timeFormat: {
+      type: String,
+      default: 'HH:mm:ss'
     }
   },
   data() {
     return {
       dateTime: moment().tz(this.timezone)
+    }
+  },
+  computed: {
+    formattedDate () {
+      return this.dateTime.format(this.dateFormat)
+    },
+    formattedTime () {
+      return this.dateTime.format(this.timeFormat)
     }
   },
   created() {

@@ -1,6 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`dashboard-test should match the snapshot 1`] = `
+exports[`dashboard-test can render formatted date by props 1`] = `
+<div
+  class="clock"
+>
+  <div
+    class="date"
+  >
+    
+    01/01/2018
+  
+  </div>
+   
+  <div
+    class="time"
+  >
+    
+    12:00:00
+  
+  </div>
+   
+  <div
+    class="timezone"
+  >
+    
+    Europe / Berlin
+  
+  </div>
+</div>
+`;
+
+exports[`dashboard-test can render formatted time by props 1`] = `
 <div
   class="clock"
 >
@@ -16,7 +46,7 @@ exports[`dashboard-test should match the snapshot 1`] = `
     class="time"
   >
     
-    12:00:00
+    12:00
   
   </div>
    
