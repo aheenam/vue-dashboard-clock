@@ -23,17 +23,17 @@ export default {
       default: 'Europe/Berlin'
     }
   },
-  data () {
+  data() {
     return {
       dateTime: moment().tz(this.timezone)
     }
   },
-  created () {
+  created() {
     this.dateTime = moment.tz(this.timezone)
     this.tick()
   },
   methods: {
-    tick () {
+    tick() {
       setInterval(() => {
         this.dateTime = moment().tz(this.timezone)
       }, 1000)
