@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dashboard-test should match the snapshot 1`] = `
+<div
+  class="clock"
+>
+  <div
+    class="date"
+  >
+    
+    Mon 01/01
+  
+  </div>
+   
+  <div
+    class="time"
+  >
+    
+    12:00:00
+  
+  </div>
+   
+  <div
+    class="timezone"
+  >
+    
+    Europe / Berlin
+  
+  </div>
+</div>
+`;

@@ -1,0 +1,63 @@
+{
+  "name": "aheenam-dashboard-clock",
+  "version": "0.1.0",
+  "description": "A clock plugin for the Aheenam Dashboard",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "dev": "webpack",
+    "build": "NODE_ENV=production webpack",
+    "prepublish": "npm run test; npm run build",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aheenam/vue-dashboard-clock.git"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
+    }
+  },
+  "keywords": [
+    "aheenam",
+    "vuejs",
+    "javascript",
+    "dashboard"
+  ],
+  "author": "Rathes Sachchithananthan <rathes@aheenam.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aheenam/vue-dashboard-clock/issues"
+  },
+  "homepage": "https://github.com/Aheenam/vue-dashboard-clock#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.7",
+    "jest": "^21.2.1",
+    "jest-vue-preprocessor": "^1.2.0",
+    "mockdate": "^2.0.2",
+    "path": "^0.12.7",
+    "vue": "^2.4.4",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^3.6.0"
+  },
+  "peerDependencies": {
+    "aheenam-vue-dashboard": "^0.1.0",
+    "vue": "^2.4.4"
+  },
+  "dependencies": {
+    "moment-timezone": "^0.5.13"
+  }
+}
