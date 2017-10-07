@@ -1,13 +1,13 @@
 {
   "name": "aheenam-dashboard-clock",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A clock plugin for the Aheenam Dashboard",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
     "dev": "webpack",
-    "build": "NODE_ENV=production webpack",
-    "prepublish": "npm run test; npm run build",
+    "build": "cross-env NODE_ENV=production webpack",
+    "prepublish": "npm run test && npm run build",
     "test": "jest",
     "test:watch": "npm run test -- --watch"
   },
@@ -43,6 +43,7 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "jest": "^21.2.1",
     "jest-vue-preprocessor": "^1.2.0",
