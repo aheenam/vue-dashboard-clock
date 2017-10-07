@@ -22,6 +22,48 @@ npm i -S aheenam-dashboard-clock
 Usage
 ---
 
+This package includes one component `Clock`. You can import it in your application and the add it to the list of components. Now you can use it in your template.
+
+```html
+<template>
+  <div>
+    <clock />
+  </div>
+</template>
+
+<script>
+import { Clock } from 'aheenam-dashboard-clock'
+
+export default {
+  // ...
+  components: {
+    Clock
+  }
+  // ...
+}
+</script>
+```
+
+### Timezone
+
+By default the component uses `Europe/Berlin` as its timezone. You can change this by providing a `timezone` prop.
+
+```html
+<clock timezone="AMERICA/LOS_ANGELES" />
+```
+
+### Format Output of Date and Time
+
+You can modify the output of the time and the date by providing the props `dateFormat` and `timeFormat`
+
+By default `dateFormat` is `ddd MM/DD` and `timeFormat` defaults to `HH:mm:ss`
+
+```html
+<clock timeFormat="HH:mm" dateFormat="DD.MM.YYYY" />
+```
+
+As this packages uses moment.js for handling time and dates, refer to [its documentation](https://momentjs.com/docs/#/displaying/format/) for more details on format values.
+
 Changelog
 ---
 Check [CHANGELOG](CHANGELOG.md) for the changelog
