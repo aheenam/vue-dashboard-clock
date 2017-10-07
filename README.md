@@ -1,5 +1,3 @@
-**Not finished yet. Do not use in production**
-
 A Vue component that display the current time
 ===
 This package provides a simple Vue component that renders the current date and time of a given timezone.
